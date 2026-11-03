@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JLPT N4 Bunpou - Pilih Materi</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="style-soal.css" />
+  </head>
+  <body class="hub-page">
+    <div class="japan-bg-container">
+      <div class="lantern lantern-left">🏮</div>
+      <div class="lantern lantern-right">🏮</div>
+      <div class="cloud cloud-1">☁️</div>
+      <div class="cloud cloud-2">☁️</div>
+      <div class="sun-element"></div>
+      <div class="sakura-branch">🌸</div>
+      <div class="fuji-mountain"></div>
+      <div class="torii-gate">⛩️</div>
+      <div class="pagoda-tower">🏯</div>
+      <div class="petals-wrapper">
+        <span class="petal p1">🌸</span>
+        <span class="petal p2">🌸</span>
+        <span class="petal p3">🌸</span>
+        <span class="petal p4">🌸</span>
+      </div>
+    </div>
+
+    <main class="hub-container">
+      <header class="hub-hero">
+        <div class="hero-kanji">日本語</div>
+        <h1>🇯🇵 JLPT N4 Bunpou</h1>
+        <p class="hub-subtitle">
+          Latihan tata bahasa interaktif. Pilih materi, jawab 10 soal, dan kejar
+          skor terbaikmu!
+        </p>
+        <div class="hero-stats">
+          <div><b id="stat-materi">12</b><span>Materi</span></div>
+          <div><b id="stat-soal">120</b><span>Soal</span></div>
+          <div><b id="stat-dicoba">0</b><span>Dicoba</span></div>
+        </div>
+        <button type="button" class="btn-reset" id="btn-reset">
+          🔄 Refresh Data
+        </button>
+      </header>
+
+      <section class="how-to" aria-labelledby="how-title">
+        <h2 class="how-title" id="how-title">📖 Cara Mengerjakan Soal</h2>
+        <ol class="how-steps">
+          <li class="how-step">
+            <span class="how-num">1</span>
+            <div>
+              <b>Pilih materi</b>
+              <p>
+                Klik salah satu kartu materi (1–12) di bawah. Setiap materi
+                berisi 10 soal.
+              </p>
+            </div>
+          </li>
+          <li class="how-step">
+            <span class="how-num">2</span>
+            <div>
+              <b>Masukkan kode akses</b>
+              <p>
+                Materi bertanda 🔒 meminta kode akses. Ketik kodenya lalu tekan
+                <i>Masuk</i>.
+              </p>
+            </div>
+          </li>
+          <li class="how-step">
+            <span class="how-num">3</span>
+            <div>
+              <b>Baca soal &amp; pilih kartu jawaban</b>
+              <p>
+                Isi bagian kosong (____) dengan memilih salah satu dari 4 kartu.
+                Bisa juga dengan menekan tombol <kbd>1</kbd>–<kbd>4</kbd>.
+              </p>
+            </div>
+          </li>
+          <li class="how-step">
+            <span class="how-num">4</span>
+            <div>
+              <b>Perhatikan nyawa &amp; combo</b>
+              <p>
+                Kamu punya 3 nyawa ❤️. Jawaban benar beruntun menambah combo dan
+                poin. Jika nyawa habis, soal diulang dari awal.
+              </p>
+            </div>
+          </li>
+          <li class="how-step">
+            <span class="how-num">5</span>
+            <div>
+              <b>Baca penjelasan</b>
+              <p>
+                Setelah menjawab, penjelasan tata bahasa muncul di bawah soal.
+                Lanjut dengan tombol <i>Berikutnya</i> atau panah ⬅ ➡ di
+                keyboard.
+              </p>
+            </div>
+          </li>
+          <li class="how-step">
+            <span class="how-num">6</span>
+            <div>
+              <b>Selesaikan &amp; kejar skor terbaik</b>
+              <p>
+                Setelah 10 soal selesai, skor tampil di kartu materi. Ulangi
+                untuk memperbaiki rekor atau lanjut ke materi berikutnya.
+              </p>
+            </div>
+          </li>
+        </ol>
+        <p class="how-note">
+          ℹ️ Kode akses dan skor akan terhapus otomatis saat tab ditutup. Tombol
+          <b>Refresh Data</b> juga bisa mengulang dari awal.
+        </p>
+      </section>
+
+      <div class="link-list materi-grid" id="link-list"></div>
+
+      <footer class="hub-footer">頑張って！ Ganbatte kudasai 🌸</footer>
+    </main>
+
+    <div class="overlay" id="reset-modal" hidden>
+      <div class="overlay-card">
+        <div class="overlay-emoji">🔄</div>
+        <h3>Refresh Data?</h3>
+        <p>
+          Semua skor terbaik akan dihapus dan semua materi dikunci lagi (perlu
+          kode akses lagi). Progres mulai dari awal.
+        </p>
+        <div class="overlay-actions">
+          <button type="button" class="nav-btn" id="reset-batal">Batal</button>
+          <button type="button" class="nav-btn primary" id="reset-ya">
+            Ya, Reset
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <script src="data-soal.js"></script>
+    <script src="akses.js"></script>
+    <script src="script-hub.js"></script>
+  </body>
+</html>

@@ -1,0 +1,292 @@
+@import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;700;800&display=swap");
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Plus Jakarta Sans", sans-serif;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+  color: #2b2d42;
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(180deg, #b0c2de 0%, #e2d1d9 50%, #f7d6d0 100%);
+}
+
+.japan-bg-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+  transform: translateZ(0);
+  will-change: transform;
+}
+
+.cloud,
+.lantern,
+.fuji-mountain,
+.torii-gate,
+.pagoda-tower,
+.petal {
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+
+.lantern {
+  position: absolute;
+  top: 15px;
+  font-size: 2.5rem;
+  animation: pulseGlow 2s infinite alternate ease-in-out;
+}
+.lantern-left {
+  left: 20px;
+}
+.lantern-right {
+  right: 20px;
+}
+
+@keyframes pulseGlow {
+  0% {
+    transform: scale(1);
+    filter: drop-shadow(0 0 2px rgba(255, 183, 3, 0.3));
+  }
+  100% {
+    transform: scale(1.05);
+    filter: drop-shadow(0 0 12px rgba(230, 57, 70, 0.8));
+  }
+}
+
+.cloud {
+  position: absolute;
+  font-size: 3rem;
+  opacity: 0.35;
+  animation: moveCloud 35s linear infinite;
+}
+.cloud-1 {
+  top: 10%;
+  left: -10%;
+}
+.cloud-2 {
+  top: 25%;
+  left: -30%;
+  animation-delay: 15s;
+}
+
+@keyframes moveCloud {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(120vw, 0, 0);
+  }
+}
+
+.moon-element {
+  position: absolute;
+  top: 8%;
+  right: 12%;
+  font-size: 4.5rem;
+  opacity: 0;
+}
+
+.sun-element {
+  position: absolute;
+  top: 8%;
+  right: 12%;
+  width: 130px;
+  height: 130px;
+  background-color: #f07178;
+  border-radius: 50%;
+  opacity: 0.8;
+}
+
+.fuji-mountain {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 320px;
+  height: 140px;
+  background: linear-gradient(180deg, #ffffff 0%, #8395a7 30%, #576574 100%);
+  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+  opacity: 0.3;
+}
+
+.sakura-branch {
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  font-size: 5rem;
+  opacity: 0.9;
+}
+
+.torii-gate {
+  position: absolute;
+  bottom: 8%;
+  left: 6%;
+  font-size: 5.5rem;
+  opacity: 0.35;
+}
+
+.pagoda-tower {
+  position: absolute;
+  bottom: 4%;
+  right: 4%;
+  font-size: 8rem;
+  opacity: 0.75;
+}
+
+.petals-wrapper .petal {
+  position: absolute;
+  font-size: 1.4rem;
+  opacity: 0.7;
+  animation: fallPetal 12s infinite linear;
+}
+
+.petal.p1 {
+  left: 10%;
+  animation-duration: 10s;
+}
+.petal.p2 {
+  left: 35%;
+  animation-duration: 14s;
+}
+.petal.p3 {
+  left: 65%;
+  animation-duration: 11s;
+}
+.petal.p4 {
+  left: 85%;
+  animation-duration: 13s;
+}
+
+@keyframes fallPetal {
+  0% {
+    transform: translate3d(0, -10vh, 0) rotate(0deg);
+  }
+  100% {
+    transform: translate3d(80px, 105vh, 0) rotate(360deg);
+  }
+}
+
+.linktree-container {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 480px;
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 2px solid rgba(255, 255, 255, 0.9);
+  border-radius: 28px;
+  padding: 25px 20px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.profile-section {
+  margin-bottom: 18px;
+}
+
+.profile-avatar {
+  font-size: 3.5rem;
+  margin-bottom: 6px;
+  animation: floatMascot 3s ease-in-out infinite;
+}
+
+@keyframes floatMascot {
+  0%,
+  100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-5px) rotate(3deg);
+  }
+}
+
+.profile-name {
+  font-size: 21px;
+  font-weight: 800;
+  color: #1d3557;
+  margin-bottom: 4px;
+}
+
+.profile-handle {
+  font-size: 12px;
+  font-weight: 700;
+  color: #e63946;
+}
+
+.link-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-height: 340px;
+  overflow-y: auto;
+  padding: 4px;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+}
+
+.link-list::-webkit-scrollbar {
+  width: 6px;
+}
+.link-list::-webkit-scrollbar-thumb {
+  background: rgba(230, 57, 70, 0.4);
+  border-radius: 10px;
+}
+
+.tree-link-btn {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #ffffff;
+  color: #1d3557;
+  border: 2px solid #f07178;
+  padding: 12px 18px;
+  border-radius: 16px;
+  font-size: 14px;
+  font-weight: 700;
+  text-decoration: none;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.04);
+  transition:
+    transform 0.15s ease,
+    background 0.15s ease;
+  cursor: pointer;
+  width: 100%;
+}
+
+.tree-link-btn div {
+  flex-grow: 1;
+  text-align: center;
+}
+
+.tree-link-btn:hover {
+  transform: translateY(-2px);
+  background: #e63946;
+  color: #ffffff;
+  border-color: #e63946;
+  box-shadow: 0 6px 15px rgba(230, 57, 70, 0.3);
+}
+
+.tree-link-btn span {
+  font-size: 16px;
+}
+
+.linktree-footer {
+  margin-top: 15px;
+  font-size: 11px;
+  font-weight: 700;
+  color: #6c757d;
+}
